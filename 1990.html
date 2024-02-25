@@ -2,6 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="js/jquery-3.6.0.min.js"></script>
 <style>
 * {
   box-sizing: border-box;
@@ -16,44 +17,308 @@ body {
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 33.33%;
+  width: 16.66%;
   padding: 10px;
   background-color: #0FF;
+  display: block;
 }
 
 .column a {
   float: none;
   color: black;
-  padding: 16px;
+  padding: 1px;
   text-decoration: none;
-  display: block;
   text-align: left;
 }
 
 .column a:hover {
   background-color: #327ba8;
 }
+
+.flag {
+	display: inline;
+	width:  100px;
+	height: 100px;
+	position: absolute;
+}
+
+#ruflag {
+	width:  110px;
+	height: 110px;
+	right: 0%;
+}
+
+.ava {
+	width:  200px;
+	height: 200px;
+}
+
+.success {
+	width:  30px;
+	height: 30px;
+	display: inline;
+	vertical-align: top;
+}
+
+.success:hover {
+	opacity: 50%;
+	cursor: pointer;
+}
+
+.type {
+	margin: 0;
+}
+
+#middle_border {
+	border-left: thick solid;
+}
+
 </style>
+<script>
+
+function load() {
+	loadFromStorage();
+}
+
+function loadFromStorage() {
+	checkSuccess(localStorage.getItem('en_90_gr_1_success'), 'en_90_gr_1_success');
+	checkSuccess(localStorage.getItem('en_90_gr_2_success'), 'en_90_gr_2_success');
+	checkSuccess(localStorage.getItem('en_90_gr_3_success'), 'en_90_gr_3_success');
+	checkSuccess(localStorage.getItem('en_90_gr_4_success'), 'en_90_gr_4_success');
+	checkSuccess(localStorage.getItem('en_90_gr_5_success'), 'en_90_gr_5_success');
+	checkSuccess(localStorage.getItem('en_90_gr_6_success'), 'en_90_gr_6_success');
+	checkSuccess(localStorage.getItem('en_90_m_1_success'), 'en_90_m_1_success');
+	checkSuccess(localStorage.getItem('en_90_m_2_success'), 'en_90_m_2_success');
+	checkSuccess(localStorage.getItem('en_90_m_3_success'), 'en_90_m_3_success');
+	checkSuccess(localStorage.getItem('en_90_f_1_success'), 'en_90_f_1_success');
+	checkSuccess(localStorage.getItem('en_90_f_2_success'), 'en_90_f_2_success');
+	checkSuccess(localStorage.getItem('en_90_f_3_success'), 'en_90_f_3_success');
+	checkSuccess(localStorage.getItem('ru_90_gr_1_success'), 'ru_90_gr_1_success');
+	checkSuccess(localStorage.getItem('ru_90_gr_2_success'), 'ru_90_gr_2_success');
+	checkSuccess(localStorage.getItem('ru_90_gr_3_success'), 'ru_90_gr_3_success');
+	checkSuccess(localStorage.getItem('ru_90_gr_4_success'), 'ru_90_gr_4_success');
+	checkSuccess(localStorage.getItem('ru_90_gr_5_success'), 'ru_90_gr_5_success');
+	checkSuccess(localStorage.getItem('ru_90_gr_6_success'), 'ru_90_gr_6_success');
+	checkSuccess(localStorage.getItem('ru_90_gr_7_success'), 'ru_90_gr_7_success');
+	checkSuccess(localStorage.getItem('ru_90_m_1_success'), 'ru_90_m_1_success');
+	checkSuccess(localStorage.getItem('ru_90_m_2_success'), 'ru_90_m_2_success');
+	checkSuccess(localStorage.getItem('ru_90_f_1_success'), 'ru_90_f_1_success');
+	checkSuccess(localStorage.getItem('ru_90_f_2_success'), 'ru_90_f_2_success');
+}
+
+function checkSuccess(pack, id) {
+	if(!pack) {
+		localStorage.setItem(id, 'false');
+	} else {
+		showSuccess(id);
+	}
+}
+
+function showSuccess(id) {
+	if(localStorage.getItem(id) == 'true'){
+		$("#" + id).attr("src", "img/success.png");
+	} else {
+		$("#" + id).attr("src", "img/square.png");
+	}
+}
+
+function toggleSuccess(id) {
+	if(localStorage.getItem(id) == 'true'){
+		localStorage.setItem(id, false);
+		$("#" + id).attr("src", "img/square.png");
+	} else {
+		localStorage.setItem(id, true);
+		$("#" + id).attr("src", "img/success.png");
+	}
+}
+
+</script>
 </head>
-<body style="background-color:white;">
+<body style="background-color:#0FF;">
 
 <div class="menu"> 
       <div class="row">
+	    <h1>
+			<img class="flag" src="img/en.png">
+			<img class="flag" src="img/ru.png" id="ruflag">
+			<center>1990</center>
+		</h1>
+		
         <div class="column">
-          <h3>Группы</h3>
-		  <a href="https://en-90-gr.netlify.app/">Зарубежные 1990 (9)</a>
-		  <a href="https://ru-90-gr.netlify.app/">Русские 1990 (5)</a>
-        </div>
-        <div class="column">
-          <h3>Исполнители</h3>
-		  <a href="https://en-90-m.netlify.app/">Зарубежные 1990 (3)</a>
-		  <a href="https://ru-90-m.netlify.app/">Русские 1990 (3)</a>
-        </div>
-        <div class="column">
-          <h3>Исполнительницы</h3>
-		  <a href="https://en-90-f.netlify.app/">Зарубежные 1990 (2)</a>
-		  <a href="https://ru-90-f.netlify.app/">Русские 1990 (3)</a>
-        </div>
+			<h3 class='type'>GROUPS</h3>
+			<div>
+				<img id='en_90_gr_1_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_1_success")'/>
+				<a href="https://en-90-gr.netlify.app?pack=1">
+					<span>Rock Medium</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='en_90_gr_2_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_2_success")'/>
+				<a href="https://en-90-gr.netlify.app/pack=2">
+					<span>Rock Hard</span>
+				</a>
+			</div>	
+			<div>	
+				<a href="https://en-90-gr.netlify.app/pack=3">
+					<img id='en_90_gr_3_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_3_success")'/>
+					<span>Rock Very Hard</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='en_90_gr_4_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_4_success")'/>
+				<a href="https://en-90-gr.netlify.app/pack=4">
+					<span>Pop Medium</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='en_90_gr_5_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_5_success")'/>
+				<a href="https://en-90-gr.netlify.app/pack=5">
+					<span>Pop Hard</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='en_90_gr_6_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_6_success")'/>
+				<a href="https://en-90-gr.netlify.app/pack=6">
+					<span>Pop Very Hard</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='en_90_gr_7_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_7_success")'/>
+				<a href="https://en-90-gr.netlify.app/pack=7">
+					<span>Women Medium</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='en_90_gr_8_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_8_success")'/>
+				<a href="https://en-90-gr.netlify.app/pack=8">
+					<span>Women Hard</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='en_90_gr_9_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_9_success")'/>
+				<a href="https://en-90-gr.netlify.app/pack=9">
+					<span>Eurodance</span>
+				</a>
+			</div>	
+		</div>
+			  
+		<div class="column">
+			<h3 class='type'>MEN</h3>
+			
+			<div>
+				<img id='en_90_m_1_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_m_1_success")'/>
+				<a href="https://en-90-m.netlify.app/pack=1">
+				  <span>Easy</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='en_90_m_2_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_m_2_success")'/>
+				<a href="https://en-90-m.netlify.app/pack=2">
+				  <span>Medium</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='en_90_m_3_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_m_3_success")'/>
+				<a href="https://en-90-m.netlify.app/pack=3">
+				  <span>Hard</span>
+				</a>
+			</div>	
+		</div>
+		
+		<div class="column">
+			<h3 class='type'>WOMEN</h3>
+			<div>
+				<img id='en_90_f_1_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_f_1_success")'/>
+				<a href="https://en-90-f.netlify.app/pack=1">
+				  <span>Easy</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='en_90_f_2_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_f_2_success")'/>
+				<a href="https://en-90-f.netlify.app/pack=2">
+				  <span>Medium</span>
+				</a>
+			</div>	
+		</div>
+		
+		<div class="column" id='middle_border'>
+			<h3 class='type'>ГРУППЫ</h3>
+			<div>
+				<img id='ru_90_gr_1_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_90_gr_1_success")'/>
+				<a href="https://ru-90-gr.netlify.app/pack=1">
+				  <span>Мужские</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='ru_90_gr_2_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_90_gr_2_success")'/>
+				<a href="https://ru-90-gr.netlify.app/pack=2">
+				  <span>Женские</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='ru_90_gr_3_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_90_gr_3_success")'/>
+				<a href="https://ru-90-gr.netlify.app/pack=3">
+				  <span>Рок 1</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='ru_90_gr_4_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_90_gr_4_success")'/>
+				<a href="https://ru-90-gr.netlify.app/pack=4">
+				  <span>Рок 2</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='ru_90_gr_5_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_90_gr_5_success")'/>
+				<a href="https://ru-90-gr.netlify.app/pack=5">
+				  <span>Диско</span>
+				</a>
+			</div>	
+		</div>
+		
+		<div class="column">
+			<h3 class='type'>ПЕВЦЫ</h3>
+			<div>
+				<img id='ru_90_m_1_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_90_m_1_success")'/>
+				<a href="https://ru-90-m.netlify.app/pack=1">
+				  <span>Простые</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='ru_90_m_2_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_90_m_2_success")'/>
+				<a href="https://ru-90-m.netlify.app/pack=2">
+				  <span>Средние</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='ru_90_m_3_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_90_m_3_success")'/>
+				<a href="https://ru-90-m.netlify.app/pack=3">
+				  <span>Сложные</span>
+				</a>
+			</div>	
+		</div>
+		
+		<div class="column">
+			<h3 class='type'>ПЕВИЦЫ</h3>
+			<div>
+				<img id='ru_90_f_1_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_90_f_1_success")'/>
+				<a href="https://ru-90-f.netlify.app/pack=1">
+				  <span>Простые</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='ru_90_f_2_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_90_f_2_success")'/>
+				<a href="https://ru-90-f.netlify.app/pack=2">
+				  <span>Средние</span>
+				</a>
+			</div>	
+			<div>	
+				<img id='ru_90_gf_3_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_f_3_success")'/>
+				<a href="https://ru-90-f.netlify.app/pack=3">
+				  <span>Сложные</span>
+				</a>
+			</div>	
+		</div>
+			
       </div>
     </div>
 
