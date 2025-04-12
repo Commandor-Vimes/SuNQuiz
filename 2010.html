@@ -82,8 +82,10 @@ function load() {
 
 function loadFromStorage() {
 	checkSuccess(localStorage.getItem('en_10_gr_1_success'), 'en_10_gr_1_success');
+	checkSuccess(localStorage.getItem('en_10_gr_2_success'), 'en_10_gr_2_success');
 	checkSuccess(localStorage.getItem('en_10_m_1_success'), 'en_10_m_1_success');
 	checkSuccess(localStorage.getItem('en_10_m_2_success'), 'en_10_m_2_success');
+	checkSuccess(localStorage.getItem('en_10_m_3_success'), 'en_10_m_3_success');
 	checkSuccess(localStorage.getItem('en_10_f_1_success'), 'en_10_f_1_success');
 	checkSuccess(localStorage.getItem('en_10_f_2_success'), 'en_10_f_2_success');
 	checkSuccess(localStorage.getItem('ru_10_gr_1_success'), 'ru_10_gr_1_success');
@@ -138,6 +140,12 @@ function toggleSuccess(id) {
 					<span>Pop</span>
 				</a>
 			</div>
+			<div>
+				<img id='en_10_gr_2_success' class='success' src="img/square.png" onclick='toggleSuccess("en_10_gr_2_success")'/>
+				<a href="https://en-10-gr.netlify.app?pack=2">
+					<span>Rock</span>
+				</a>
+			</div>
 		</div>
 			  
 		<div class="column">
@@ -154,6 +162,12 @@ function toggleSuccess(id) {
 				  <span>Dj</span>
 				</a>
 			</div>
+			<div>
+				<img id='en_10_m_3_success' class='success' src="img/square.png" onclick='toggleSuccess("en_10_m_3_success")'/>
+				<a href="https://en-10-m.netlify.app?pack=3">
+				  <span>Rap</span>
+				</a>
+			</div>
 		</div>
 		
 		<div class="column">
@@ -165,7 +179,7 @@ function toggleSuccess(id) {
 				</a>
 			</div>
 			<div>
-				<img id='en_10_f_1_success' class='success' src="img/square.png" onclick='toggleSuccess("en_10_f_2_success")'/>
+				<img id='en_10_f_2_success' class='success' src="img/square.png" onclick='toggleSuccess("en_10_f_2_success")'/>
 				<a href="https://en-10-f.netlify.app?pack=2">
 				  <span>Started after 2010</span>
 				</a>
