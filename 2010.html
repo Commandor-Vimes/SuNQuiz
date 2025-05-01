@@ -83,6 +83,7 @@ function load() {
 function loadFromStorage() {
 	checkSuccess(localStorage.getItem('en_10_gr_1_success'), 'en_10_gr_1_success');
 	checkSuccess(localStorage.getItem('en_10_gr_2_success'), 'en_10_gr_2_success');
+	checkSuccess(localStorage.getItem('en_10_gr_3_success'), 'en_10_gr_3_success');
 	checkSuccess(localStorage.getItem('en_10_m_1_success'), 'en_10_m_1_success');
 	checkSuccess(localStorage.getItem('en_10_m_2_success'), 'en_10_m_2_success');
 	checkSuccess(localStorage.getItem('en_10_m_3_success'), 'en_10_m_3_success');
@@ -145,6 +146,12 @@ function toggleSuccess(id) {
 				<img id='en_10_gr_2_success' class='success' src="img/square.png" onclick='toggleSuccess("en_10_gr_2_success")'/>
 				<a href="https://en-10-gr.netlify.app?pack=2">
 					<span>Rock</span>
+				</a>
+			</div>
+			<div>
+				<img id='en_10_gr_3_success' class='success' src="img/square.png" onclick='toggleSuccess("en_10_gr_3_success")'/>
+				<a href="https://en-10-gr.netlify.app?pack=3">
+					<span>K-Pop</span>
 				</a>
 			</div>
 		</div>
