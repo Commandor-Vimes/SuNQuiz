@@ -102,6 +102,7 @@ function loadFromStorage() {
 	checkSuccess(localStorage.getItem('ru_00_gr_7_success'), 'ru_00_gr_7_success');
 	checkSuccess(localStorage.getItem('ru_00_m_1_success'), 'ru_00_m_1_success');
 	checkSuccess(localStorage.getItem('ru_00_m_2_success'), 'ru_00_m_2_success');
+	checkSuccess(localStorage.getItem('ru_00_m_3_success'), 'ru_00_m_3_success');
 	checkSuccess(localStorage.getItem('ru_00_f_1_success'), 'ru_00_f_1_success');
 	checkSuccess(localStorage.getItem('ru_00_f_2_success'), 'ru_00_f_2_success');
 }
@@ -161,7 +162,7 @@ function toggleSuccess(id) {
 			<div>
 				<img id='en_00_gr_3_success' class='success' src="img/square.png" onclick='toggleSuccess("en_00_gr_3_success")'/>
 				<a href="https://en-00-gr.netlify.app?pack=3">
-					<span>Women</span>
+					<span>Women Groups</span>
 				</a>
 			</div>	
 			<div>
@@ -288,7 +289,13 @@ function toggleSuccess(id) {
 				<a href="https://ru-00-m.netlify.app?pack=2">
 				  <span>Сложные</span>
 				</a>
-			</div>	
+			</div>
+			<div>
+				<img id='ru_00_m_3_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_00_m_3_success")'/>
+				<a href="https://ru-00-m.netlify.app?pack=3">
+				  <span>Фабрики Звёзд *******</span>
+				</a>
+			</div>				
 		</div>
 		
 		<div class="column">
