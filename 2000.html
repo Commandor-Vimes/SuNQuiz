@@ -90,6 +90,7 @@ function loadFromStorage() {
 	checkSuccess(localStorage.getItem('en_00_m_1_success'), 'en_00_m_1_success');
 	checkSuccess(localStorage.getItem('en_00_m_2_success'), 'en_00_m_2_success');
 	checkSuccess(localStorage.getItem('en_00_m_3_success'), 'en_00_m_3_success');
+	checkSuccess(localStorage.getItem('en_00_m_4_success'), 'en_00_m_4_success');
 	checkSuccess(localStorage.getItem('en_00_f_1_success'), 'en_00_f_1_success');
 	checkSuccess(localStorage.getItem('en_00_f_2_success'), 'en_00_f_2_success');
 	checkSuccess(localStorage.getItem('en_00_f_3_success'), 'en_00_f_3_success');
@@ -293,7 +294,15 @@ function toggleSuccess(id) {
 			<div>
 				<img id='ru_00_m_3_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_00_m_3_success")'/>
 				<a href="https://ru-00-m.netlify.app?pack=3">
-				  <span>Фабрики Звёзд *******</span>
+				  <span>Фабрики Звёзд *******
+				  <br/>Мужской вокал</span>
+				</a>
+			</div>
+			<div>
+				<img id='ru_00_m_4_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_00_m_4_success")'/>
+				<a href="https://ru-00-m.netlify.app?pack=4">
+				  <span>Фабрики Звёзд *******
+				  <br/>Женский вокал</span>
 				</a>
 			</div>				
 		</div>
