@@ -82,7 +82,6 @@ function load() {
 
 function loadFromStorage() {
 	checkSuccess(localStorage.getItem('en_90_gr_1_success'), 'en_90_gr_1_success');
-	checkSuccess(localStorage.getItem('en_90_gr_2_success'), 'en_90_gr_2_success');
 	checkSuccess(localStorage.getItem('en_90_gr_4_success'), 'en_90_gr_4_success');
 	checkSuccess(localStorage.getItem('en_90_gr_5_success'), 'en_90_gr_5_success');
 	checkSuccess(localStorage.getItem('en_90_gr_7_success'), 'en_90_gr_7_success');
@@ -148,14 +147,9 @@ function toggleSuccess(id) {
 			<div>
 				<img id='en_90_gr_1_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_1_success")'/>
 				<a href="https://en-gr-90.netlify.app?pack=1">
-					<span>Rock Medium</span>
+					<span>Rock</span>
 				</a>
 			</div>	
-			<div>	
-				<img id='en_90_gr_2_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_2_success")'/>
-				<a href="https://en-gr-90.netlify.app?pack=2">
-					<span>Rock Hard</span>
-				</a>
 			</div>	
 			<div>	
 				<img id='en_90_gr_4_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_gr_4_success")'/>
