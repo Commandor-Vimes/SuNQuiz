@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="js/jquery-3.6.0.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 16.66%;
+  padding: 10px;
+  background-color: #0FF;
+  display: block;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 1px;
+  text-decoration: none;
+  text-align: left;
+}
+
+.column a:hover {
+  background-color: #327ba8;
+}
+
+.flag {
+	display: inline;
+	width:  100px;
+	height: 100px;
+	position: absolute;
+}
+
+#ruflag {
+	width:  110px;
+	height: 110px;
+	right: 0%;
+}
+
+.ava {
+	width:  200px;
+	height: 200px;
+}
+
+.success {
+	width:  30px;
+	height: 30px;
+	display: inline;
+	vertical-align: top;
+}
+
+.success:hover {
+	opacity: 50%;
+	cursor: pointer;
+}
+
+.type {
+	margin: 0;
+}
+
+#middle_border {
+	border-left: thick solid;
+}
+
+</style>
+<script>
+
+function load() {
+	loadFromStorage();
+}
+
+function loadFromStorage() {
+	checkSuccess(localStorage.getItem('en_70_gr_1_success'), 'en_70_gr_1_success');
+	checkSuccess(localStorage.getItem('en_70_m_1_success'), 'en_70_m_1_success');
+	checkSuccess(localStorage.getItem('en_70_f_1_success'), 'en_70_f_1_success');
+	checkSuccess(localStorage.getItem('ru_70_gr_1_success'), 'ru_70_gr_1_success');
+	checkSuccess(localStorage.getItem('ru_70_m_1_success'), 'ru_70_m_1_success');
+	checkSuccess(localStorage.getItem('ru_70_f_1_success'), 'ru_70_f_1_success');
+}
+
+function checkSuccess(pack, id) {
+	if(!pack) {
+		localStorage.setItem(id, 'false');
+	} else {
+		showSuccess(id);
+	}
+}
+
+function showSuccess(id) {
+	if(localStorage.getItem(id) == 'true'){
+		$("#" + id).attr("src", "img/success.png");
+	} else {
+		$("#" + id).attr("src", "img/square.png");
+	}
+}
+
+function toggleSuccess(id) {
+	if(localStorage.getItem(id) == 'true'){
+		localStorage.setItem(id, false);
+		$("#" + id).attr("src", "img/square.png");
+	} else {
+		localStorage.setItem(id, true);
+		$("#" + id).attr("src", "img/success.png");
+	}
+}
+
+</script>
+</head>
+<body style="background-color:#0FF;" onload='load()'>
+
+<div class="menu"> 
+      <div class="row">
+	    <h1>
+			<img class="flag" src="img/en.png">
+			<img class="flag" src="img/ru.png" id="ruflag">
+			<center>1970</center>
+		</h1>
+		
+        <div class="column">
+			<h3 class='type'>GROUPS</h3>
+			<div>
+				<img id='en_70_gr_1_success' class='success' src="img/square.png" onclick='toggleSuccess("en_70_gr_1_success")'/>
+				<a href="#">
+					<span>Rock</span>
+				</a>
+			</div>
+		</div>
+			  
+		<div class="column">
+			<h3 class='type'>MEN</h3>
+			<div>
+				<img id='en_70_m_1_success' class='success' src="img/square.png" onclick='toggleSuccess("en_70_m_1_success")'/>
+				<a href="#">
+				  <span>Pop</span>
+				</a>
+			</div>
+		</div>
+		
+		<div class="column">
+			<h3 class='type'>WOMEN</h3>
+			<div>
+				<img id='en_70_f_1_success' class='success' src="img/square.png" onclick='toggleSuccess("en_70_f_1_success")'/>
+				<a href="#">
+				  <span>Pop</span>
+				</a>
+			</div>
+		</div>
+		
+		<div class="column" id='middle_border'>
+			<h3 class='type'>ГРУППЫ</h3>
+			<div>
+				<img id='ru_70_gr_1_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_70_gr_1_success")'/>
+				<a href="#">
+				  <span>Поп</span>
+				</a>
+			</div>
+		</div>
+		
+		<div class="column">
+			<h3 class='type'>ПЕВЦЫ</h3>
+			<div>
+				<img id='ru_70_m_1_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_70_m_1_success")'/>
+				<a href="https://ru-70-m.netlify.app?pack=1">
+				  <span>Поп</span>
+				</a>
+			</div>
+		</div>
+		
+		<div class="column">
+			<h3 class='type'>ПЕВИЦЫ</h3>
+			<div>
+				<img id='ru_70_f_1_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_70_f_1_success")'/>
+				<a href="#">
+				  <span>Поп</span>
+				</a>
+			</div>
+		</div>
+			
+      </div>
+    </div>
+
+</body>
+</html>
