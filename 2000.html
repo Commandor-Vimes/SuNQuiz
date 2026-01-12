@@ -106,6 +106,7 @@ function loadFromStorage() {
 	checkSuccess(localStorage.getItem('ru_00_m_3_success'), 'ru_00_m_3_success');
 	checkSuccess(localStorage.getItem('ru_00_f_1_success'), 'ru_00_f_1_success');
 	checkSuccess(localStorage.getItem('ru_00_f_2_success'), 'ru_00_f_2_success');
+	checkSuccess(localStorage.getItem('ru_00_f_3_success'), 'ru_00_f_3_success');
 }
 
 function checkSuccess(pack, id) {
@@ -302,7 +303,13 @@ function toggleSuccess(id) {
 				<a href="https://ru-00-f.netlify.app?pack=2">
 				  <span>Сложные</span>
 				</a>
-			</div>	
+			</div>
+			<div>	
+				<img id='ru_00_f_3_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_00_f_3_success")'/>
+				<a href="https://ru-00-f.netlify.app?pack=3">
+				  <span>One Hit Wonders</span>
+				</a>
+			</div>				
 		</div>
 			
       </div>
