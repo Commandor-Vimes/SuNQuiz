@@ -104,6 +104,7 @@ function loadFromStorage() {
 	checkSuccess(localStorage.getItem('ru_90_f_1_success'), 'ru_90_f_1_success');
 	checkSuccess(localStorage.getItem('ru_90_f_2_success'), 'ru_90_f_2_success');
 	checkSuccess(localStorage.getItem('ru_90_f_3_success'), 'ru_90_f_3_success');
+	checkSuccess(localStorage.getItem('ru_90_f_4_success'), 'ru_90_f_4_success');
 }
 
 function checkSuccess(pack, id) {
@@ -300,11 +301,17 @@ function toggleSuccess(id) {
 				</a>
 			</div>	
 			<div>	
-				<img id='ru_90_gf_3_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_f_3_success")'/>
+				<img id='ru_90_f_3_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_f_3_success")'/>
 				<a href="https://ru-f-90.netlify.app?pack=3">
 				  <span>Сложные</span>
 				</a>
-			</div>	
+			</div>
+			<div>	
+				<img id='ru_90_f_4_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_f_4_success")'/>
+				<a href="https://ru-f-90.netlify.app?pack=4">
+				  <span>Шансон</span>
+				</a>
+			</div>
 		</div>
 			
       </div>
