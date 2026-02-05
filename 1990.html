@@ -90,6 +90,7 @@ function loadFromStorage() {
 	checkSuccess(localStorage.getItem('en_90_m_1_success'), 'en_90_m_1_success');
 	checkSuccess(localStorage.getItem('en_90_m_2_success'), 'en_90_m_2_success');
 	checkSuccess(localStorage.getItem('en_90_m_3_success'), 'en_90_m_3_success');
+	checkSuccess(localStorage.getItem('en_90_m_4_success'), 'en_90_m_4_success');
 	checkSuccess(localStorage.getItem('en_90_f_1_success'), 'en_90_f_1_success');
 	checkSuccess(localStorage.getItem('en_90_f_2_success'), 'en_90_f_2_success');
 	checkSuccess(localStorage.getItem('ru_90_gr_1_success'), 'ru_90_gr_1_success');
@@ -205,7 +206,13 @@ function toggleSuccess(id) {
 				<a href="https://en-m-90.netlify.app?pack=3">
 				  <span>Rap</span>
 				</a>
-			</div>	
+			</div>
+			<div>	
+				<img id='en_90_m_4_success' class='success' src="img/square.png" onclick='toggleSuccess("en_90_m_4_success")'/>
+				<a href="https://en-m-90.netlify.app?pack=4">
+				  <span>One Hit Wonders</span>
+				</a>
+			</div>				
 		</div>
 		
 		<div class="column">
