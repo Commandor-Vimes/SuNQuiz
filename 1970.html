@@ -48,6 +48,10 @@ body {
 	right: 0%;
 }
 
+#back {
+	cursor: pointer;
+}
+
 .ava {
 	width:  200px;
 	height: 200px;
@@ -123,6 +127,7 @@ function toggleSuccess(id) {
 <div class="menu"> 
       <div class="row">
 	    <h1>
+			<img id='back' class='onhover' src="img/back.png" width="100" height="100" onclick="back()" />
 			<img class="flag" src="img/en.png">
 			<img class="flag" src="img/ru.png" id="ruflag">
 			<center>1970</center>
