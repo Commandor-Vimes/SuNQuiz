@@ -48,6 +48,14 @@ body {
 	right: 0%;
 }
 
+#back {
+	cursor: pointer;
+}
+
+.onhover:hover {
+	opacity: 0.5;
+}
+
 .ava {
 	width:  200px;
 	height: 200px;
@@ -140,6 +148,10 @@ function toggleSuccess(id) {
 	}
 }
 
+function back() {
+	window.location.href = 'https://sunquiz.netlify.app';
+}
+
 </script>
 </head>
 <body style="background-color:#0FF;" onload='load()'>
@@ -147,6 +159,7 @@ function toggleSuccess(id) {
 <div class="menu"> 
       <div class="row">
 	    <h1>
+			<img id='back' class='onhover' src="img/back.png" width="100" height="100" onclick="back()" />
 			<img class="flag" src="img/en.png">
 			<img class="flag" src="img/ru.png" id="ruflag">
 			<center>2000</center>
@@ -245,15 +258,9 @@ function toggleSuccess(id) {
 		<div class="column" id='middle_border'>
 			<h3 class='type'>ГРУППЫ</h3>
 			<div>
-				<img id='ru_00_gr_1_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_00_gr_1_success")'/>
-				<a href="https://ru-00-gr.netlify.app?pack=1">
-				  <span>Boys Bands</span>
-				</a>
-			</div>	
-			<div>
 				<img id='ru_00_gr_3_success' class='success' src="img/square.png" onclick='toggleSuccess("ru_00_gr_3_success")'/>
 				<a href="https://ru-00-gr.netlify.app?pack=3">
-				  <span>Girls Bands</span>
+				  <span>Поп</span>
 				</a>
 			</div>	
 			<div>
@@ -345,9 +352,8 @@ function toggleSuccess(id) {
 				  <span>One Hit Wonders</span>
 				</a>
 			</div>				
-		</div>
-			
-      </div>
+		</div>			
+      </div>	  
     </div>
 
 </body>
